@@ -1,0 +1,326 @@
+﻿@model System_GMMunicipal.Models.Motorizada
+
+@{
+    ViewData["Title"] = "Registar Motorizada";
+}
+
+<div class="nk-block-head nk-block-head-sm">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            <h3 class="nk-block-title page-title">Registar Motorizada</h3>
+            <div class="nk-block-des text-soft">
+                <p>Preencha os dados da motorizada para efectuar o registo no sistema.</p>
+            </div>
+        </div>
+
+        <div class="nk-block-head-content">
+            <div class="toggle-wrap nk-block-tools-toggle">
+                <a asp-action="Index" class="btn btn-outline-light bg-white d-none d-sm-inline-flex">
+                    <em class="icon ni ni-arrow-left"></em>
+                    <span>Voltar à Lista</span>
+                </a>
+
+                <a asp-action="Index"
+                   class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none">
+                    <em class="icon ni ni-arrow-left"></em>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nk-block">
+    <div class="row g-gs">
+
+        <div class="col-12">
+
+            <div class="card card-bordered">
+
+                <div class="card-inner">
+
+                    <div class="card-head">
+                        <h6 class="title">
+                            <em class="icon ni ni-motorcycle me-1"></em>
+                            Dados da Motorizada
+                        </h6>
+                    </div>
+
+                    <form asp-action="Create">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="alert alert-danger"
+                             role="alert"></div>
+
+                        <div class="row g-4">
+
+                            <!-- Matrícula -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Matricula" class="form-label">
+                                        Matrícula
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="Matricula"
+                                               class="form-control"
+                                               placeholder="Ex.: ABC-12-34" />
+
+                                        <span asp-validation-for="Matricula"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Marca -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Marca" class="form-label">
+                                        Marca
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="Marca"
+                                               class="form-control"
+                                               placeholder="Ex.: Honda" />
+
+                                        <span asp-validation-for="Marca"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modelo -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Modelo" class="form-label">
+                                        Modelo
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="Modelo"
+                                               class="form-control"
+                                               placeholder="Ex.: CG 125" />
+
+                                        <span asp-validation-for="Modelo"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ano de Fabrico -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="AnoFabrico" class="form-label">
+                                        Ano de Fabrico
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="AnoFabrico"
+                                               type="number"
+                                               class="form-control"
+                                               placeholder="Ex.: 2022" />
+
+                                        <span asp-validation-for="AnoFabrico"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cor -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Cor" class="form-label">
+                                        Cor
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="Cor"
+                                               class="form-control"
+                                               placeholder="Ex.: Vermelha" />
+
+                                        <span asp-validation-for="Cor"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cilindrada -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Cilindrada" class="form-label">
+                                        Cilindrada
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="Cilindrada"
+                                               type="number"
+                                               class="form-control"
+                                               placeholder="Ex.: 125 cc" />
+
+                                        <span asp-validation-for="Cilindrada"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Número do Chassi -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="NumeroChassi" class="form-label">
+                                        Número do Chassi
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="NumeroChassi"
+                                               class="form-control"
+                                               placeholder="Número do chassi" />
+
+                                        <span asp-validation-for="NumeroChassi"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Número do Motor -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="NumeroMotor" class="form-label">
+                                        Número do Motor
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="NumeroMotor"
+                                               class="form-control"
+                                               placeholder="Número do motor" />
+
+                                        <span asp-validation-for="NumeroMotor"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Capacidade de Carga -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="CapacidadeCarga" class="form-label">
+                                        Capacidade de Carga
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="CapacidadeCarga"
+                                               type="number"
+                                               class="form-control"
+                                               placeholder="Ex.: 150 kg" />
+
+                                        <span asp-validation-for="CapacidadeCarga"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Estado -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Estado" class="form-label">
+                                        Estado
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <select asp-for="Estado"
+                                                class="form-select">
+                                            <option value="">-- Seleccione o estado --</option>
+                                            <option value="Activo">Activo</option>
+                                            <option value="Inactivo">Inactivo</option>
+                                            <option value="Manutenção">Em Manutenção</option>
+                                        </select>
+
+                                        <span asp-validation-for="Estado"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Data de Registo -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="DataRegisto" class="form-label">
+                                        Data de Registo
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <input asp-for="DataRegisto"
+                                               type="date"
+                                               class="form-control" />
+
+                                        <span asp-validation-for="DataRegisto"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Condutor -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="condutorId" class="form-label">
+                                        Condutor
+                                    </label>
+
+                                    <div class="form-control-wrap">
+                                        <select asp-for="condutorId"
+                                                class="form-select"
+                                                asp-items="ViewBag.condutorId">
+                                            <option value="">
+                                                -- Seleccione o condutor --
+                                            </option>
+                                        </select>
+
+                                        <span asp-validation-for="condutorId"
+                                              class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-note mt-4">
+                            <em class="icon ni ni-info"></em>
+                            <span>
+                                Confirme todos os dados antes de efectuar o registo.
+                            </span>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                <li>
+                                    <button type="submit"
+                                            class="btn btn-primary">
+                                        <em class="icon ni ni-save"></em>
+                                        <span>Guardar Motorizada</span>
+                                    </button>
+                                </li>
+
+                                <li>
+                                    <a asp-action="Index"
+                                       class="btn btn-outline-light">
+                                        Cancelar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

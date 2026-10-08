@@ -1,0 +1,114 @@
+﻿@model System_GMMunicipal.Models.Acidente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Acidente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DataHora" class="control-label"></label>
+                <input asp-for="DataHora" class="form-control" />
+                <span asp-validation-for="DataHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Local" class="control-label"></label>
+                <input asp-for="Local" class="form-control" />
+                <span asp-validation-for="Local" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Latitude" class="control-label"></label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitude" class="control-label"></label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CondutorId" class="control-label"></label>
+                <select asp-for="CondutorId" class="form-control" asp-items="ViewBag.CondutorId"></select>
+                <span asp-validation-for="CondutorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotorizadaId" class="control-label"></label>
+                <select asp-for="MotorizadaId" class="form-control" asp-items="ViewBag.MotorizadaId"></select>
+                <span asp-validation-for="MotorizadaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoAcidente" class="control-label"></label>
+                <input asp-for="TipoAcidente" class="form-control" />
+                <span asp-validation-for="TipoAcidente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gravidade" class="control-label"></label>
+                <input asp-for="Gravidade" class="form-control" />
+                <span asp-validation-for="Gravidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroFeridos" class="control-label"></label>
+                <input asp-for="NumeroFeridos" class="form-control" />
+                <span asp-validation-for="NumeroFeridos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroMortos" class="control-label"></label>
+                <input asp-for="NumeroMortos" class="form-control" />
+                <span asp-validation-for="NumeroMortos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroVeiculos" class="control-label"></label>
+                <input asp-for="NumeroVeiculos" class="form-control" />
+                <span asp-validation-for="NumeroVeiculos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CausaProvavel" class="control-label"></label>
+                <input asp-for="CausaProvavel" class="form-control" />
+                <span asp-validation-for="CausaProvavel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CondicoesClimaticas" class="control-label"></label>
+                <input asp-for="CondicoesClimaticas" class="form-control" />
+                <span asp-validation-for="CondicoesClimaticas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoVia" class="control-label"></label>
+                <input asp-for="EstadoVia" class="form-control" />
+                <span asp-validation-for="EstadoVia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistadoPor" class="control-label"></label>
+                <input asp-for="RegistadoPor" class="form-control" />
+                <span asp-validation-for="RegistadoPor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRegisto" class="control-label"></label>
+                <input asp-for="DataRegisto" class="form-control" />
+                <span asp-validation-for="DataRegisto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

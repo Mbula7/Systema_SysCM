@@ -1,0 +1,604 @@
+﻿@model System_GMMunicipal.Models.Condutor
+
+@{
+    ViewData["Title"] = "Registar Condutor";
+}
+
+<div class="nk-block-head nk-block-head-sm">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            <h3 class="nk-block-title page-title">Registar Condutor</h3>
+            <div class="nk-block-des text-soft">
+                <p>Preencha os dados pessoais, contactos e informações da carta de condução.</p>
+            </div>
+        </div>
+
+        <div class="nk-block-head-content">
+            <div class="toggle-wrap nk-block-tools-toggle">
+                <a asp-action="Index"
+                   class="btn btn-outline-light bg-white d-none d-sm-inline-flex">
+                    <em class="icon ni ni-arrow-left"></em>
+                    <span>Voltar à Lista</span>
+                </a>
+
+                <a asp-action="Index"
+                   class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none">
+                    <em class="icon ni ni-arrow-left"></em>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nk-block">
+
+    <div class="row g-gs">
+
+        <div class="col-12">
+
+            <div class="card card-bordered">
+
+                <div class="card-inner">
+
+                    <form asp-action="Create"
+                          method="post"
+                          enctype="multipart/form-data">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="alert alert-danger"
+                             role="alert">
+                        </div>
+
+                        <!-- ============================= -->
+                        <!-- DADOS PESSOAIS -->
+                        <!-- ============================= -->
+
+                        <div class="card-head mb-3">
+                            <h6 class="title">
+                                <em class="icon ni ni-user"></em>
+                                Dados Pessoais
+                            </h6>
+                        </div>
+
+                        <div class="row g-4">
+
+                            <!-- Nome Completo -->
+                            <div class="col-md-8">
+                                <div class="form-group">
+
+                                    <label asp-for="NomeCompleto"
+                                           class="form-label">
+                                        Nome Completo
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="NomeCompleto"
+                                               class="form-control"
+                                               placeholder="Digite o nome completo" />
+
+                                        <span asp-validation-for="NomeCompleto"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Número BI -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="NumeroBI"
+                                           class="form-label">
+                                        Número do BI
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="NumeroBI"
+                                               class="form-control"
+                                               placeholder="Ex.: 110100123456A" />
+
+                                        <span asp-validation-for="NumeroBI"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Data Nascimento -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="DataNascimento"
+                                           class="form-label">
+                                        Data de Nascimento
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="DataNascimento"
+                                               type="date"
+                                               class="form-control" />
+
+                                        <span asp-validation-for="DataNascimento"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Sexo -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="Sexo"
+                                           class="form-label">
+                                        Sexo
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <select asp-for="Sexo"
+                                                class="form-select">
+
+                                            <option value="">
+                                                -- Seleccione --
+                                            </option>
+
+                                            <option value="Masculino">
+                                                Masculino
+                                            </option>
+
+                                            <option value="Feminino">
+                                                Feminino
+                                            </option>
+
+                                        </select>
+
+                                        <span asp-validation-for="Sexo"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Fotografia -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="Foto"
+                                           class="form-label">
+                                        Fotografia
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="Foto"
+                                               type="file"
+                                               class="form-control"
+                                               accept="image/*" />
+
+                                        <span asp-validation-for="Foto"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+
+                                    <div class="form-note">
+                                        Formatos permitidos: JPG, JPEG ou PNG.
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ============================= -->
+                        <!-- CONTACTOS -->
+                        <!-- ============================= -->
+
+                        <div class="card-head mt-5 mb-3">
+                            <h6 class="title">
+                                <em class="icon ni ni-call"></em>
+                                Contactos e Endereço
+                            </h6>
+                        </div>
+
+                        <div class="row g-4">
+
+                            <!-- Telefone -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="Telefone"
+                                           class="form-label">
+                                        Telefone
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="Telefone"
+                                               type="tel"
+                                               class="form-control"
+                                               placeholder="Ex.: 82 123 4567" />
+
+                                        <span asp-validation-for="Telefone"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Email -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="Email"
+                                           class="form-label">
+                                        E-mail
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="Email"
+                                               type="email"
+                                               class="form-control"
+                                               placeholder="Ex.: condutor@email.com" />
+
+                                        <span asp-validation-for="Email"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Município -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="MunicipioId"
+                                           class="form-label">
+                                        Município
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <select asp-for="MunicipioId"
+                                                class="form-select"
+                                                asp-items="ViewBag.MunicipioId">
+
+                                            <option value="">
+                                                -- Seleccione o município --
+                                            </option>
+
+                                        </select>
+
+                                        <span asp-validation-for="MunicipioId"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Endereço -->
+                            <div class="col-12">
+                                <div class="form-group">
+
+                                    <label asp-for="Endereco"
+                                           class="form-label">
+                                        Endereço
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <textarea asp-for="Endereco"
+                                                  class="form-control"
+                                                  rows="3"
+                                                  placeholder="Digite o endereço completo">
+                                        </textarea>
+
+                                        <span asp-validation-for="Endereco"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ============================= -->
+                        <!-- CARTA DE CONDUÇÃO -->
+                        <!-- ============================= -->
+
+                        <div class="card-head mt-5 mb-3">
+                            <h6 class="title">
+                                <em class="icon ni ni-file-text"></em>
+                                Carta de Condução
+                            </h6>
+                        </div>
+
+                        <div class="row g-4">
+
+                            <!-- Número da Carta -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="NumeroCartaConducao"
+                                           class="form-label">
+                                        Número da Carta
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="NumeroCartaConducao"
+                                               class="form-control"
+                                               placeholder="Número da carta" />
+
+                                        <span asp-validation-for="NumeroCartaConducao"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Categoria -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="CategoriaCarta"
+                                           class="form-label">
+                                        Categoria
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <select asp-for="CategoriaCarta"
+                                                class="form-select">
+
+                                            <option value="">
+                                                -- Seleccione a categoria --
+                                            </option>
+
+                                            <option value="A">
+                                                A
+                                            </option>
+
+                                            <option value="A1">
+                                                A1
+                                            </option>
+
+                                            <option value="B">
+                                                B
+                                            </option>
+
+                                            <option value="C">
+                                                C
+                                            </option>
+
+                                            <option value="D">
+                                                D
+                                            </option>
+
+                                            <option value="E">
+                                                E
+                                            </option>
+
+                                        </select>
+
+                                        <span asp-validation-for="CategoriaCarta"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Data Emissão -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="DataEmissaoCarta"
+                                           class="form-label">
+                                        Data de Emissão
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="DataEmissaoCarta"
+                                               type="date"
+                                               class="form-control" />
+
+                                        <span asp-validation-for="DataEmissaoCarta"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Data Validade -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="DataValidadeCarta"
+                                           class="form-label">
+                                        Data de Validade
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="DataValidadeCarta"
+                                               type="date"
+                                               class="form-control" />
+
+                                        <span asp-validation-for="DataValidadeCarta"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Estado -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="Estado"
+                                           class="form-label">
+                                        Estado
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <select asp-for="Estado"
+                                                class="form-select">
+
+                                            <option value="">
+                                                -- Seleccione o estado --
+                                            </option>
+
+                                            <option value="Activo">
+                                                Activo
+                                            </option>
+
+                                            <option value="Inactivo">
+                                                Inactivo
+                                            </option>
+
+                                            <option value="Suspenso">
+                                                Suspenso
+                                            </option>
+
+                                        </select>
+
+                                        <span asp-validation-for="Estado"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Data Registo -->
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label asp-for="DataRegisto"
+                                           class="form-label">
+                                        Data de Registo
+                                    </label>
+
+                                    <div class="form-control-wrap">
+
+                                        <input asp-for="DataRegisto"
+                                               type="date"
+                                               class="form-control" />
+
+                                        <span asp-validation-for="DataRegisto"
+                                              class="text-danger">
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ============================= -->
+                        <!-- NOTA -->
+                        <!-- ============================= -->
+
+                        <div class="form-note mt-4">
+                            <em class="icon ni ni-info"></em>
+
+                            <span>
+                                Confirme os dados pessoais e da carta de condução
+                                antes de efectuar o registo.
+                            </span>
+                        </div>
+
+
+                        <!-- ============================= -->
+                        <!-- BOTÕES -->
+                        <!-- ============================= -->
+
+                        <div class="form-group mt-4">
+
+                            <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+
+                                <li>
+
+                                    <button type="submit"
+                                            class="btn btn-primary">
+
+                                        <em class="icon ni ni-save"></em>
+
+                                        <span>
+                                            Guardar Condutor
+                                        </span>
+
+                                    </button>
+
+                                </li>
+
+                                <li>
+
+                                    <a asp-action="Index"
+                                       class="btn btn-outline-light">
+
+                                        Cancelar
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+

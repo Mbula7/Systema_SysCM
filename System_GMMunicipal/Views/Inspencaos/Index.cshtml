@@ -1,0 +1,95 @@
+﻿@model IEnumerable<System_GMMunicipal.Models.Inspencao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Motorizada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FiscalUtilizador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInspeccao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoMotorizada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Travões)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pneus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Luzes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Espelhos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Documentacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resultado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motorizada.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiscalUtilizador.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInspeccao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoMotorizada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Travões)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pneus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luzes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Espelhos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Documentacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resultado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacoes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
